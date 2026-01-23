@@ -203,6 +203,18 @@ body {
       <a href="#">Marketplace</a>
       <a href="#">Settings</a>
       <a href="#">Logout</a>
+<!-- OWNER NAVIGATION -->
+<script>
+if (localStorage.getItem("vantaRole") === "owner") {
+  document.write(`
+    <div style="margin-top:20px;padding-top:20px;border-top:1px solid #222">
+      <a href="coach-admin.html">👑 Coach Admin</a>
+      <a href="users.html">👥 Users</a>
+      <a href="analytics.html">📊 Analytics</a>
+    </div>
+  `);
+}
+</script>
     </nav>
   </aside>
 
