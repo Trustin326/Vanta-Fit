@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login — VANTA FIT™</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif;
+  background:#0a0a0a;
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.box{
+  background:#141414;
+  border:1px solid #222;
+  padding:40px;
+  width:100%;
+  max-width:420px;
+}
+h1{
+  text-align:center;
+  margin-bottom:20px;
+}
+input{
+  width:100%;
+  padding:14px;
+  margin-bottom:14px;
+  background:#0d0d0d;
+  border:1px solid #222;
+  color:#fff;
+}
+button{
+  width:100%;
+  padding:14px;
+  background:#fff;
+  color:#000;
+  border:none;
+  font-weight:600;
+  cursor:pointer;
+}
+p{
+  text-align:center;
+  color:#9a9a9a;
+  margin-top:16px;
+}
+a{ color:#fff; }
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h1>VANTA FIT™</h1>
+  <input type="email" placeholder="Email">
+  <input type="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <p>New here? <a href="signup.html">Create account</a></p>
+</div>
+
+<script>
+function login(){
+  // demo auth
+  localStorage.setItem("vantaUser","loggedin");
+  window.location.href="dashboard.html";
+}
+</script>
+
+</body>
+</html>
