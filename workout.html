@@ -1,4 +1,14 @@
 <script>
+if(localStorage.getItem("vantaRole")==="buyer"){
+  document.body.innerHTML = `
+    <div style="padding:80px;text-align:center">
+      <h1>🔒 Elite Feature</h1>
+      <p>Upgrade to unlock coaching & advanced tools.</p>
+      <a href="pricing.html" style="color:white">Upgrade Now</a>
+    </div>`;
+}
+</script>
+<script>
 if (!localStorage.getItem("vantaUser")) {
   window.location.replace("login.html");
 }
