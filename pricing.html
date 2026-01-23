@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pricing — VANTA FIT™</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif;
+  background:#0a0a0a;
+  color:#fff;
+}
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:80px 20px;
+}
+h1{
+  text-align:center;
+  margin-bottom:50px;
+}
+.pricing{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.card{
+  background:#141414;
+  border:1px solid #222;
+  padding:40px;
+  text-align:center;
+}
+.price{
+  font-size:2.5rem;
+  margin:20px 0;
+}
+button{
+  margin-top:20px;
+  padding:14px 24px;
+  background:#fff;
+  color:#000;
+  border:none;
+  font-weight:600;
+  cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Choose Your Plan</h1>
+
+  <div class="pricing">
+
+    <div class="card">
+      <h3>Starter</h3>
+      <div class="price">FREE</div>
+      <p>Basic tracking & workouts</p>
+      <button onclick="free()">Continue</button>
+    </div>
+
+    <div class="card">
+      <h3>Pro</h3>
+      <div class="price">$29/mo</div>
+      <p>Meals • Barcode • Progress</p>
+      <button onclick="checkout('pro')">Start Pro</button>
+    </div>
+
+    <div class="card">
+      <h3>Elite Coaching</h3>
+      <div class="price">$79/mo</div>
+      <p>Coach chat • Custom plans</p>
+      <button onclick="checkout('elite')">Join Elite</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function free(){
+  localStorage.setItem("vantaPlan","free");
+  window.location.href="dashboard.html";
+}
+
+function checkout(plan){
+  // 🔥 STRIPE CHECKOUT LINK GOES HERE 🔥
+  // Example:
+  // window.location.href="https://buy.stripe.com/XXXXXXXX";
+  alert("Connect Stripe Checkout for: " + plan);
+}
+</script>
+
+</body>
+</html>
