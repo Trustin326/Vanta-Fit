@@ -1,3 +1,8 @@
+<script>
+if (!localStorage.getItem("vantaUser")) {
+  window.location.replace("login.html");
+}
+</script>
 <a href="#" onclick="logout()">Logout</a>
 
 <script>
