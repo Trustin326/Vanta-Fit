@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VANTA FIT™ — Demo Access</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      background: #0a0a0a;
+      color: #ffffff;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      background: #0a0a0a;
+      border-bottom: 1px solid #222;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .nav-actions button {
+      margin-left: 12px;
+      padding: 10px 20px;
+      border: 1px solid #ffffff;
+      background: transparent;
+      color: #ffffff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .nav-actions button:hover {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: auto;
+      padding: 100px 24px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      color: #9a9a9a;
+      font-size: 1.1rem;
+    }
+
+    .status {
+      margin-top: 40px;
+      padding: 20px;
+      border: 1px dashed #333;
+      color: #9a9a9a;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="brand">VANTA FIT™</div>
+  <div class="nav-actions">
+    <button onclick="demoBuyer()">Demo Buyer</button>
+    <button onclick="demoOwner()">Owner Login</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Train Smarter.<br>Eat Cleaner.<br>Track Everything.</h1>
+  <p>
+    This is a live demo of the VANTA FIT™ fitness SaaS.
+    Choose a demo mode above to explore the full app.
+  </p>
+
+  <div class="status" id="status">
+    Not logged in
+  </div>
+</section>
+
+<script>
+/* DEMO BUYER */
+function demoBuyer() {
+  localStorage.setItem("vantaUser", "true");
+  localStorage.setItem("vantaRole", "buyer");
+  localStorage.setItem("vantaPlan", "pro");
+  document.getElementById("status").innerText =
+    "Demo Buyer Mode Enabled — Limited Features";
+  window.location.href = "dashboard.html";
+}
+
+/* OWNER FULL ACCESS */
+function demoOwner() {
+  localStorage.setItem("vantaUser", "true");
+  localStorage.setItem("vantaRole", "owner");
+  localStorage.setItem("vantaPlan", "elite");
+  document.getElementById("status").innerText =
+    "OWNER MODE ENABLED — Full Access";
+  window.location.href = "dashboard.html";
+}
+</script>
+
+</body>
+</html>
