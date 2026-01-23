@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VANTA FIT™</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script>
+    // Demo buyer gate
+    if (!localStorage.getItem("vantaUser")) {
+      window.location.replace("login.html");
+    } else {
+      window.location.replace("dashboard.html");
+    }
+  </script>
+
+  <style>
+    body {
+      margin:0;
+      background:#0a0a0a;
+      color:#fff;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+    }
+  </style>
+</head>
+<body>
+  <p>Loading VANTA FIT™…</p>
+</body>
+</html>
