@@ -1,4 +1,14 @@
 <script>
+if (localStorage.getItem("vantaRole") === "owner") {
+  document.write(`
+    <div style="border:1px solid #222;padding:14px;margin-bottom:20px;background:#141414">
+      👑 <strong>Owner Mode Active</strong><br>
+      Full access enabled
+    </div>
+  `);
+}
+</script>
+<script>
 if (!localStorage.getItem("vantaUser")) {
   window.location.replace("login.html");
 }
