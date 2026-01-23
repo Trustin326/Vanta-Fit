@@ -1,3 +1,7 @@
+function unlockElite(){
+  localStorage.setItem("vantaRole","elite");
+  window.location.href="dashboard.html";
+}
 <script>
 if (!localStorage.getItem("vantaUser")) {
   window.location.replace("login.html");
