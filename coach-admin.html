@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Coach Admin — VANTA FIT™</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  background:#0a0a0a;color:#fff;
+  font-family:system-ui;
+  padding:40px;
+}
+textarea,input{
+  width:100%;
+  background:#141414;
+  border:1px solid #222;
+  color:#fff;
+  padding:12px;
+  margin-bottom:14px;
+}
+button{
+  padding:12px 20px;
+  background:#fff;color:#000;
+  border:none;font-weight:600;
+}
+.post{
+  border:1px solid #222;
+  padding:20px;
+  margin-top:20px;
+  background:#141414;
+}
+</style>
+</head>
+<body>
+
+<script>
+if(localStorage.getItem("vantaRole")!=="owner"){
+  location.replace("dashboard.html");
+}
+</script>
+
+<h1>👑 Coach Post Editor</h1>
+
+<input id="title" placeholder="Post title">
+<textarea id="content" rows="6" placeholder="Coach message..."></textarea>
+<button onclick="publish()">Publish</button>
+
+<div id="posts"></div>
+
+<script>
+function publish(){
+  const posts = JSON.parse(localStorage.getItem("coachPosts")||"[]");
+  posts.unshift({
+    title: title.value,
+    content: content.value,
+    date: new Date().toLocaleDateString()
+  });
+  localStorage.setItem("coachPosts", JSON.stringify(posts));
+  render();
+}
+
+function render(){
+  posts.innerHTML="";
+  const data = JSON.parse(localStorage.getItem("coachPosts")||"[]");
+  data.forEach(p=>{
+    posts.innerHTML+=`
+      <div class="post">
+        <h3>${p.title}</h3>
+        <p>${p.content}</p>
+        <small>${p.date}</small>
+      </div>`;
+  });
+}
+render();
+</script>
+
+</body>
+</html>
