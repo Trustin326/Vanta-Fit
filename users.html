@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>User Manager</title>
+<style>
+body{background:#0a0a0a;color:#fff;font-family:system-ui;padding:40px}
+.card{border:1px solid #222;padding:20px;background:#141414;margin-bottom:12px}
+</style>
+</head>
+<body>
+
+<script>
+if(localStorage.getItem("vantaRole")!=="owner"){
+  location.replace("dashboard.html");
+}
+</script>
+
+<h1>👥 Users (Demo)</h1>
+
+<div class="card">demo@vantafit.com — Buyer</div>
+<div class="card">elite@vantafit.com — Elite</div>
+<div class="card">owner@vantafit.com — Owner</div>
+
+<p style="color:#9a9a9a">
+Real user data connects later via Supabase/Firebase.
+</p>
+
+</body>
+</html>
