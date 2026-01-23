@@ -1,4 +1,9 @@
 <script>
+if (!localStorage.getItem("vantaUser")) {
+  window.location.replace("login.html");
+}
+</script>
+<script>
 if(!localStorage.getItem("vantaUser")){
   window.location.href="login.html";
 }
