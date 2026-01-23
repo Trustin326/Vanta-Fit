@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Analytics — VANTA FIT™</title>
+<style>
+body{background:#0a0a0a;color:#fff;font-family:system-ui;padding:40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.card{border:1px solid #222;background:#141414;padding:20px}
+</style>
+</head>
+<body>
+
+<script>
+if(localStorage.getItem("vantaRole")!=="owner"){
+  location.replace("dashboard.html");
+}
+</script>
+
+<h1>📊 Analytics</h1>
+
+<div class="grid">
+  <div class="card">👤 Active Users<br><strong>128</strong></div>
+  <div class="card">💳 Paid Members<br><strong>42</strong></div>
+  <div class="card">🔥 Avg Streak<br><strong>12 days</strong></div>
+  <div class="card">💰 MRR<br><strong>$2,980</strong></div>
+</div>
+
+</body>
+</html>
