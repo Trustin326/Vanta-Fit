@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VANTA FIT™ — Coach Chat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --bg:#0a0a0a;
+  --panel:#141414;
+  --border:#222;
+  --text:#fff;
+  --muted:#9a9a9a;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Inter",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* LAYOUT */
+.app {
+  display:grid;
+  grid-template-columns:260px 1fr;
+  min-height:100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  background:#070707;
+  border-right:1px solid var(--border);
+  padding:30px 20px;
+}
+
+.logo {
+  font-weight:800;
+  letter-spacing:.12em;
+  margin-bottom:40px;
+}
+
+.nav a {
+  display:block;
+  padding:12px 14px;
+  margin-bottom:8px;
+  color:var(--muted);
+  font-size:.95rem;
+}
+
+.nav a.active,
+.nav a:hover {
+  background:var(--panel);
+  color:var(--text);
+}
+
+/* MAIN CHAT */
+.chat {
+  display:flex;
+  flex-direction:column;
+  height:100vh;
+}
+
+/* HEADER */
+.chat-header {
+  padding:20px 30px;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.chat-header h2 {
+  margin:0;
+  font-size:1.2rem;
+}
+
+.status {
+  font-size:.8rem;
+  color:#7CFC9E;
+}
+
+/* MESSAGES */
+.messages {
+  flex:1;
+  padding:30px;
+  overflow-y:auto;
+}
+
+.msg {
+  max-width:70%;
+  margin-bottom:16px;
+  padding:14px 18px;
+  font-size:.9rem;
+  line-height:1.5;
+}
+
+.msg.coach {
+  background:#1a1a1a;
+  border:1px solid var(--border);
+  border-radius:16px 16px 16px 4px;
+}
+
+.msg.user {
+  background:#fff;
+  color:#000;
+  margin-left:auto;
+  border-radius:16px 16px 4px 16px;
+}
+
+/* INPUT */
+.input-bar {
+  border-top:1px solid var(--border);
+  padding:20px;
+  display:flex;
+  gap:12px;
+}
+
+.input-bar input {
+  flex:1;
+  background:#0d0d0d;
+  border:1px solid var(--border);
+  color:#fff;
+  padding:12px 14px;
+  font-size:.9rem;
+}
+
+.input-bar button {
+  background:#fff;
+  color:#000;
+  border:none;
+  padding:12px 20px;
+  font-size:.85rem;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.input-bar button:hover {
+  opacity:.85;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">VANTA FIT™</div>
+    <nav class="nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="meals.html">Meals</a>
+      <a href="workouts.html">Workouts</a>
+      <a href="#">Progress</a>
+      <a href="#">Goals</a>
+      <a class="active" href="#">Coach Chat</a>
+      <a href="#">Marketplace</a>
+      <a href="#">Settings</a>
+    </nav>
+  </aside>
+
+  <!-- CHAT -->
+  <section class="chat">
+
+    <div class="chat-header">
+      <h2>Coach Alex</h2>
+      <div class="status">● Online</div>
+    </div>
+
+    <div class="messages">
+
+      <div class="msg coach">
+        Great job logging all your meals this week.
+        Let’s slightly increase protein at breakfast.
+      </div>
+
+      <div class="msg user">
+        Got it. Should I add a shake or eggs?
+      </div>
+
+      <div class="msg coach">
+        Eggs are ideal. Add a shake only on heavy training days.
+      </div>
+
+      <div class="msg coach">
+        Also — your bench press numbers are improving. 
+        We’ll increase weight next week.
+      </div>
+
+      <div class="msg user">
+        Love that. Thanks!
+      </div>
+
+    </div>
+
+    <div class="input-bar">
+      <input type="text" placeholder="Type your message..." />
+      <button>Send</button>
+    </div>
+
+  </section>
+
+</div>
+
+</body>
+</html>
