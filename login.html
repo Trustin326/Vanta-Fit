@@ -1,8 +1,28 @@
 <script>
-if (!localStorage.getItem("vantaUser")) {
-  window.location.replace("login.html");
+function login() {
+  const email = document.querySelector('input[type="email"]').value;
+  const password = document.querySelector('input[type="password"]').value;
+
+  // OWNER LOGIN
+  if (email === "owner@vantafit.com" && password === "VantaOwner2026!") {
+    localStorage.setItem("vantaUser", "true");
+    localStorage.setItem("vantaRole", "owner");
+    window.location.replace("dashboard.html");
+    return;
+  }
+
+  // BUYER / DEMO LOGIN
+  if (email.length > 0 && password.length > 0) {
+    localStorage.setItem("vantaUser", "true");
+    localStorage.setItem("vantaRole", "buyer");
+    window.location.replace("dashboard.html");
+    return;
+  }
+
+  alert("Invalid login");
 }
 </script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
