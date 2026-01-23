@@ -1,3 +1,11 @@
+<a href="#" onclick="logout()">Logout</a>
+
+<script>
+function logout() {
+  localStorage.clear();
+  window.location.replace("login.html");
+}
+</script>
 <script>
 if (localStorage.getItem("vantaRole") === "owner") {
   document.write(`
