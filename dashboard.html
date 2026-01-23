@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VANTA FIT™ Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --bg: #0a0a0a;
+  --panel: #141414;
+  --border: #222;
+  --text: #ffffff;
+  --muted: #9a9a9a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* LAYOUT */
+.app {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  background: #070707;
+  border-right: 1px solid var(--border);
+  padding: 30px 20px;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: .12em;
+  margin-bottom: 40px;
+}
+
+.nav a {
+  display: block;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.nav a:hover,
+.nav a.active {
+  background: var(--panel);
+  color: var(--text);
+}
+
+/* MAIN */
+.main {
+  padding: 40px;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.user {
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+/* CARDS */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 24px;
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 1.1rem;
+}
+
+/* STATS */
+.stat {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.progress {
+  height: 8px;
+  background: #222;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  background: #fff;
+}
+
+/* LIST */
+.list p {
+  margin: 10px 0;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+/* BADGES */
+.badges span {
+  display: inline-block;
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  margin: 6px 6px 0 0;
+  font-size: .8rem;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: .85rem;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #000;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">VANTA FIT™</div>
+    <nav class="nav">
+      <a class="active" href="#">Dashboard</a>
+      <a href="#">Meals</a>
+      <a href="#">Workouts</a>
+      <a href="#">Progress</a>
+      <a href="#">Goals</a>
+      <a href="#">Coach Chat</a>
+      <a href="#">Marketplace</a>
+      <a href="#">Settings</a>
+      <a href="#">Logout</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <div class="header">
+      <h1>Welcome back</h1>
+      <div class="user">Pro Member</div>
+    </div>
+
+    <div class="grid">
+
+      <!-- CALORIES -->
+      <div class="card">
+        <h3>Daily Calories</h3>
+        <div class="stat">1,420 / 2,000</div>
+        <div class="progress"><span style="width:71%"></span></div>
+      </div>
+
+      <!-- CARBS -->
+      <div class="card">
+        <h3>Carbs</h3>
+        <div class="stat">132g / 180g</div>
+        <div class="progress"><span style="width:73%"></span></div>
+      </div>
+
+      <!-- MEALS -->
+      <div class="card list">
+        <h3>Meals Logged</h3>
+        <p>🍳 Breakfast — Oatmeal & Eggs</p>
+        <p>🥗 Lunch — Chicken Salad</p>
+        <p>🍽 Dinner — Pending</p>
+        <a class="btn" href="#">Log Meal</a>
+      </div>
+
+      <!-- WORKOUT -->
+      <div class="card list">
+        <h3>Workout Today</h3>
+        <p>Upper Body Strength</p>
+        <p>⏱ 45 Minutes</p>
+        <p>🔥 380 Calories Burned</p>
+        <a class="btn" href="#">Log Workout</a>
+      </div>
+
+      <!-- GOALS -->
+      <div class="card">
+        <h3>Goals</h3>
+        <p class="muted">Weight Goal</p>
+        <div class="progress"><span style="width:60%"></span></div>
+        <p class="muted" style="margin-top:10px;">Workout Consistency</p>
+        <div class="progress"><span style="width:80%"></span></div>
+      </div>
+
+      <!-- BADGES -->
+      <div class="card badges">
+        <h3>Achievements</h3>
+        <span>🔥 7-Day Streak</span>
+        <span>💪 10 Workouts</span>
+        <span>🥗 Meal Master</span>
+        <span>🏅 Goal Crusher</span>
+      </div>
+
+      <!-- COACH -->
+      <div class="card list">
+        <h3>Coach Messages</h3>
+        <p>💬 “Great consistency this week. Increase protein slightly.”</p>
+        <a class="btn" href="#">Open Chat</a>
+      </div>
+
+    </div>
+  </main>
+
+</div>
+
+</body>
+</html>
