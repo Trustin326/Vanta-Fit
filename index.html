@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>VANTA FIT™ — Full Owner Demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<style>
+:root{
+  --bg:#0a0a0a;
+  --panel:#141414;
+  --border:#222;
+  --text:#fff;
+  --muted:#9a9a9a;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+}
+nav{
+  position:sticky;top:0;z-index:9999;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 24px;
+  background:var(--bg);
+  border-bottom:1px solid var(--border);
+}
+.brand{font-weight:800;letter-spacing:.12em}
+.nav-actions button{
+  margin-left:12px;
+  padding:10px 22px;
+  border:1px solid #fff;
+  background:transparent;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+.nav-actions button:hover{background:#fff;color:#000}
+.container{max-width:1200px;margin:auto;padding:80px 24px}
+.hero{text-align:center}
+.hero h1{font-size:clamp(2.8rem,6vw,4rem)}
+.hero p{max-width:720px;margin:auto;color:var(--muted)}
+
+.grid5{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:24px;
+  margin-top:60px;
+}
+.svg-box{
+  height:260px;
+  border:1px solid var(--border);
+  background:var(--panel);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.features{
+  margin-top:80px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+.card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  padding:30px;
+}
+.card a{
+  display:inline-block;
+  margin-top:12px;
+  padding:8px 18px;
+  border:1px solid #fff;
+  color:#fff;
+  text-decoration:none;
+}
+.card a:hover{background:#fff;color:#000}
+footer{
+  text-align:center;
+  padding:40px;
+  color:var(--muted);
+  border-top:1px solid var(--border);
+  margin-top:120px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="brand">VANTA FIT™</div>
+  <div class="nav-actions">
+    <button onclick="owner()">OWNER MODE</button>
+  </div>
+</nav>
+
+<section class="hero container">
+  <h1>Train Smarter.<br>Eat Cleaner.<br>Track Everything.</h1>
+  <p>Full owner demo — all features unlocked.</p>
+
+  <!-- 5 GUARANTEED IMAGES -->
+  <div class="grid5">
+    <div class="svg-box"><svg width="180" height="120"><text x="50%" y="50%" fill="white" font-size="20" text-anchor="middle">BEFORE</text></svg></div>
+    <div class="svg-box"><svg width="180" height="120"><text x="50%" y="50%" fill="white" font-size="20" text-anchor="middle">AFTER</text></svg></div>
+    <div class="svg-box"><svg width="180" height="120"><text x="50%" y="50%" fill="white" font-size="18" text-anchor="middle">MEALS</text></svg></div>
+    <div class="svg-box"><svg width="180" height="120"><text x="50%" y="50%" fill="white" font-size="18" text-anchor="middle">WORKOUTS</text></svg></div>
+    <div class="svg-box"><svg width="180" height="120"><text x="50%" y="50%" fill="white" font-size="18" text-anchor="middle">COACH</text></svg></div>
+  </div>
+</section>
+
+<section class="container features">
+  <div class="card">
+    <h3>Meals & Nutrition</h3>
+    <p>Calories, carbs, meal planning, barcode scanning.</p>
+    <a href="meals.html">Open</a>
+  </div>
+  <div class="card">
+    <h3>Workout Logger</h3>
+    <p>Sets, reps, weights, timers.</p>
+    <a href="workouts.html">Open</a>
+  </div>
+  <div class="card">
+    <h3>Progress Tracking</h3>
+    <p>Photos, charts, goals.</p>
+    <a href="progress.html">Open</a>
+  </div>
+  <div class="card">
+    <h3>Coach Chat</h3>
+    <p>Direct messaging and feedback.</p>
+    <a href="coach-chat.html">Open</a>
+  </div>
+  <div class="card">
+    <h3>Dashboard</h3>
+    <p>Overview, stats, achievements.</p>
+    <a href="dashboard.html">Open</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 VANTA FIT™ — Owner Demo
+</footer>
+
+<script>
+/* GLOBAL OWNER OVERRIDE — THIS IS THE KEY */
+function owner(){
+  localStorage.setItem("vantaUser","true");
+  localStorage.setItem("vantaRole","owner");
+  localStorage.setItem("vantaPlan","elite");
+  localStorage.setItem("vantaOverride","true");
+  alert("OWNER MODE ENABLED — ALL FEATURES UNLOCKED");
+}
+</script>
+
+</body>
+</html>
