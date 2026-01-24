@@ -1,4 +1,11 @@
 <script>
+/* GLOBAL OWNER OVERRIDE */
+if (localStorage.getItem("vantaOverride") === "true") {
+  localStorage.setItem("vantaPlan","elite");
+  localStorage.setItem("vantaRole","owner");
+}
+</script>
+<script>
 if (!localStorage.getItem("vantaUser")) {
   window.location.replace("login.html");
 }
