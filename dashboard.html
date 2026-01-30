@@ -1,4 +1,34 @@
 <script>
+/* ========= VANTA UNIVERSAL AUTH ========= */
+
+/* 1. Read auth state */
+const vRole = localStorage.getItem("vantaRole");
+const vPlan = localStorage.getItem("vantaPlan");
+
+/* 2. Redirect if not logged in */
+if (!vRole) {
+  window.location.href = "login.html";
+}
+
+/* 3. Owner = FULL SYSTEM ACCESS */
+if (vRole === "owner") {
+  localStorage.setItem("vantaPlan", "elite");
+  localStorage.setItem("vantaAccess", "full");
+  localStorage.setItem("vantaAnalytics", "enabled");
+  localStorage.setItem("vantaMessaging", "enabled");
+}
+
+/* 4. Demo buyer = CORE FEATURES */
+if (vRole === "buyer" && vPlan === "demo") {
+  localStorage.setItem("vantaAccess", "core");
+}
+
+/* 5. Access helpers (optional use) */
+window.isOwner = () => localStorage.getItem("vantaAccess") === "full";
+window.isDemo = () => localStorage.getItem("vantaAccess") === "core";
+
+/* ======================================= */
+</script><script>
 /* ========= VANTA AUTH BOOTSTRAP ========= */
 
 const role = localStorage.getItem("vantaRole");
