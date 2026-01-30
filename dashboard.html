@@ -1,4 +1,28 @@
 <script>
+/* ========= VANTA AUTH BOOTSTRAP ========= */
+
+const role = localStorage.getItem("vantaRole");
+const plan = localStorage.getItem("vantaPlan");
+
+/* Redirect if not logged in */
+if (!role) {
+  window.location.href = "login.html";
+}
+
+/* Owner = FULL ACCESS */
+if (role === "owner") {
+  localStorage.setItem("vantaPlan", "elite");
+  localStorage.setItem("vantaAccess", "full");
+  localStorage.setItem("vantaAnalytics", "enabled");
+}
+
+/* Demo buyer = CORE ACCESS */
+if (role === "buyer" && plan === "demo") {
+  localStorage.setItem("vantaAccess", "core");
+}
+
+/* ====================================== */
+</script><script>
 /* GLOBAL OWNER OVERRIDE */
 if (localStorage.getItem("vantaOverride") === "true") {
   localStorage.setItem("vantaPlan","elite");
