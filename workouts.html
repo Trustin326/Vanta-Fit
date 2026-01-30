@@ -26,6 +26,33 @@ window.isOwner = () => localStorage.getItem("vantaAccess") === "full";
 
 /* ================================= */
 </script><script>
+/* ===== VANTA GLOBAL AUTH FIX ===== */
+
+const role = localStorage.getItem("vantaRole");
+
+/* Redirect if not logged in */
+if (!role) {
+  window.location.href = "login.html";
+}
+
+/* OWNER = FULL ACCESS */
+if (role === "owner") {
+  localStorage.setItem("vantaPlan", "elite");
+  localStorage.setItem("vantaAccess", "full");
+  localStorage.setItem("vantaAnalytics", "enabled");
+  localStorage.setItem("vantaMessaging", "enabled");
+}
+
+/* Demo buyer */
+if (role === "buyer") {
+  localStorage.setItem("vantaAccess", "core");
+}
+
+/* Helper */
+window.isOwner = () => localStorage.getItem("vantaAccess") === "full";
+
+/* ================================= */
+</script><script>
 /* ========= VANTA UNIVERSAL AUTH ========= */
 
 /* 1. Read auth state */
